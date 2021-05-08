@@ -30,23 +30,21 @@ void solve(int n) {
 	int lb = 1, ub = n;
 	int zeros;
 
-	int sum = query(lb, ub);
+	int sum = query(1, ub);
 	zeros = n - sum;
 
-	while (ub - lb > 1) {
+	while (ub - lb >= 1) {
 		int i = (ub + lb) / 2;
-		int sum = query(lb, i);
-		int targetSum = i - lb + 1;
+		int sum = query(1, i);
+		int targetSum = i;
 		zeros = targetSum - sum;
 		
-		if (zeros < k) lb = i;
+		if (zeros < k) lb = i + 1;
 		else ub = i;
 	}
 
-	sum = query(lb, lb);
-	int answer = sum == 0 ? lb : ub;
-	cout << "! " << answer << endl;
-	updateAnswer(answer);
+	cout << "! " << lb << endl;
+	updateAnswer(lb);
 }
 
 int main() {
