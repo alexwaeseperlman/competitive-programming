@@ -28,6 +28,7 @@ int main() {
 
 	bool portalsVisited = false;
 
+
 	/*
 	for (int i = 0; i < n; i++) {
 		cout << endl;
@@ -68,6 +69,7 @@ int main() {
 				ll k = portal.first, l = portal.second;
 				if (!visited[k][l]) {
 					visits.emplace(top.first - world[i][j] - world[k][l], make_pair(k, l));
+					visited[k][l] = true;
 				}
 			}
 		}
