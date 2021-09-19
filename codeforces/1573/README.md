@@ -40,7 +40,7 @@ int main() {
 ## Problem B
 The problem statement is here: https://codeforces.com/contest/1573/problem/B
 
-This was also a relatively straightforward solution. The important thing to notice is that since none of the digits are the same in array a and b, which means that the only digit that matters for lexicographical ordering is the first one. We need to find the values of `i`, `j` such that `a[i] < b[j]`, minimizing `i + j`. I did this efficiently (O(n log n) time) by sorting each array and creating a map from each value of `j` to the smallest value of `i` such that `a[i] < b[j]`. It's simple to find the solution from there.
+This was also a relatively straightforward solution. The important thing to notice is that since none of the digits are the same in array a and b, the only digit that matters for lexicographical ordering is the first one. We need to find the values of `i`, `j` such that `a[i] < b[j]`, minimizing `i + j`. I did this efficiently (O(n log n) time) by sorting each array and creating a map from each value of `j` to the smallest value of `i` such that `a[i] < b[j]`. It's simple to find the solution from there.
 
 ```cpp
 #include <bits/stdc++.h>
