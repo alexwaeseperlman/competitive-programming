@@ -87,5 +87,5 @@ This was an interesting problem. My trick for solving this was to think of the b
 4. If yes then calculate the distance to this chapter (max of distances to required chapters, +1 if an extra reading is necessary). Push every chapter that requires this one to the stack.
 5. Once the stack is empty check if the distance to every chapter has been calculated yet. If it hasn't then the graph contains a circular dependency and there is no solution. If it has then return the maximum distance 
 
-The implementation is too long to fit in this post, but it's given in the folder
+The implementation is too long to fit in this post, but it's in `C.cpp` in the folder
 
