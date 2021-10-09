@@ -2,6 +2,9 @@
 A repository for my competitive programming. 
 
 I have been practicing writing explanations here too. These are links to my most recent write-ups:
+* [Project Euler problem #267 (Oct 9, 2021)](<./project euler/267>)
+* [Project Euler problem #757 (Oct 9, 2021)](<./project euler/757>)
+* [Project Euler problem #134 (Oct 9, 2021)](<./project euler/134>)
 * [Project Euler problem #216 (Oct 3, 2021)](<./project euler/216>)
 * [Project Euler problem #51 (Oct 1, 2021)](<./project euler/51>)
 * [Project Euler problem #23 (Oct 1, 2021)](<./project euler/23>)
