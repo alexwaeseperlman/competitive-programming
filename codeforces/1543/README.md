@@ -1,6 +1,6 @@
 # Codeforces contest #1543
 
-I ran this as a virtual contest for practice. I ended up doing pretty well on it.
+I'm using latex in these solutions even though GitHub doesn't support it. I might move to GitLab in the future, or maybe convert this into a Jupyter notebook.
 
 # Problem A
 The problem statement is here: [https://codeforces.com/contest/1543/problem/A](https://codeforces.com/contest/1543/problem/A)
