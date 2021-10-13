@@ -2,6 +2,7 @@
 A repository for my competitive programming. 
 
 I have been practicing writing explanations here too. These are links to my most recent write-ups:
+* [Codeforces contest #1543 (Oct 13, 2021)](<./codeforces/1543>)
 * [Project Euler problem #267 (Oct 9, 2021)](<./project euler/267>)
 * [Project Euler problem #757 (Oct 9, 2021)](<./project euler/757>)
 * [Project Euler problem #134 (Oct 9, 2021)](<./project euler/134>)
