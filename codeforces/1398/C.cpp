@@ -9,28 +9,21 @@ int a[100020];
 void solve() {
 	int n;
 	cin >> n;
+	map<int, int> counts;
+	counts[0] = 1;
 	for (int i = 1; i <= n; i++) {
 		char n; cin >> n;
 		a[i] = n-'0';
-		pfixSum[i] = pfixSum[i-1] + a[i];
+		pfixSum[i] = pfixSum[i-1] + (a[i]-1);
+		counts[pfixSum[i]]++;
 	}
-	
-	int count = 0;
-	for (int i = 1; i <= n; i++) {
-		for (int j = i; j <= n;) {
-			if (pfixSum[j] - pfixSum[i-1] == j-i+1) {
-				count++;
-				j++;
-			}
-			else if (pfixSum[j] - pfixSum[i-1] > j-i+1) {
-				j += (pfixSum[j] - pfixSum[i-1]) - (j-i+1);
-			}
-			else {
-				j++;
-			}
-		}
+
+	ll total = 0;
+	for (auto [x, c] : counts) {
+		total += c*(c-1)/2;
 	}
-	cout << count << endl;
+
+	cout << total << endl;
 }
 
 int main() {
