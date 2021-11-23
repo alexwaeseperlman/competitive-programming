@@ -1,0 +1,5 @@
+print(1)
+print(1000000, 1000000)
+for i in range(1000000): print((i*5345253463)%998244353, end=" ")
+for i in range(1000000): print((i*45465346)%(2**32-1), end=" ")
+print()

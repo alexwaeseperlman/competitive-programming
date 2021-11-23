@@ -20,7 +20,19 @@ ull gcd(ull a, ull b) {
 	if (b == 0) return a;
 	return gcd(b, a%b);
 }
- 
+
+struct node {
+	int color = -1;
+};
+
+ll rsquare(ll b, ll row) {
+	ll out = b;
+	for (int i = 0; i < row; i++) {
+		out = (out*out)%base;
+	}
+	return out;
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
@@ -28,61 +40,23 @@ int main() {
 	int k; cin >> k;
  
 	map<string, int> colors;
-	colors["white"] = 1;
-	colors["yellow"] = 4;
-	colors["green"] = 2;
-	colors["blue"] = 5;
-	colors["red"] = 3;
-	colors["orange"] = 6;
- 
-	vector<map<int, set<int>>> open(64);
-	vector<map<int, int>> unset(64);
+	colors["white"] = 0;
+	colors["yellow"] = 3;
+	colors["green"] = 1;
+	colors["blue"] = 4;
+	colors["red"] = 2;
+	colors["orange"] = 5;
 	int n; cin >> n;
+ 	vector<map<ll, node>> rows(63);
 	for (int i = 0; i < n; i++) {
 		ll v; string s; cin >> v >> s;
- 
-		int row = log2(v);
-		v -= 1<<row;
-		if (open[row].count(v) && !open[row][v].count(colors[s])) {
-			cout << 0 << endl;
-			return 0;
-		}
-		else {
-			open[row][v] = set<int>{colors[s]};
-		}
-		if (row > 0 && open[row-1].count(v/2) == 0) {
-			open[row-1][v/2] = set<int>{1, 2, 3, 4, 5, 6};
-			unset[row-1][v/2] = 2;
-		}
-		if (row > 0) unset[row-1][v/2]--;
-		if (!open[row+1].count(v*2)) open[row+1][v*2] = set<int>{1, 2, 3, 4, 5, 6};
-		if (!open[row+1].count(v*2+1)) open[row+1][v*2+1] = set<int>{1, 2, 3, 4, 5, 6};
-		for (auto i : { &open[row+1][v*2], &open[row+1][v*2+1] }) {
-			i->erase(colors[s]);
-			i->erase(1+(colors[s]+2)%6);
-		}
-		if (row > 0) {
-			open[row-1][v/2].erase(colors[s]);
-			open[row-1][v/2].erase(1+(colors[s]+2)%6);
-		}
+
+		rows[(int)log2(v)][v-(1<<((int)log2(v)))].color = colors[s];
 	}
-	
-	ll out = 1, prow = 4, inv = 250000002;
-	if (open[0].count(0)) {
-		out *= open[0][0].size();
-	}
-	else out *= 6;
- 
-	for (int i = 1; i < k; i++) {
-		prow = (prow*prow)%base;
-		out *= prow;
-		out %= base;
-		for (auto [idx, s] : open[i]) {
-			out = (out*inv)%base;
-			if (s.size() == 1) continue;
-			out = (out*(s.size()))%base;
-		}
-	}
- 
-	cout << out << endl;
+
+	ll inv=250000002;
+	function<ll(ll, ll, int)> subtreeSize = [&](ll row, ll key, int color) -> ll {
+		ll out = (((rsquare(4, k-row+1)*inv)%base)*inv)%base;
+		
+	};
 }
