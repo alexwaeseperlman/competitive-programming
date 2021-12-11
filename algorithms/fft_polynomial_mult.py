@@ -1,5 +1,6 @@
 import cmath
 import math
+
 def fft(coef, inv=False):
     if len(coef) == 1: return coef
 
@@ -14,7 +15,7 @@ def fft(coef, inv=False):
 
     xn, x = cmath.exp(-(2 * math.pi * 1j)/n), 1
     if inv:
-        xn = 1/xn;
+        xn = 1/xn
 
     for i in range(n//2):
         vals[i] = a[i] + x*b[i]
@@ -53,6 +54,6 @@ def polynomial_exp(a, n):
 
     return out
 
-print(*polynomial_exp([1, 1], 20))
+print(*polynomial_exp([1, 1], 3))
 
 
