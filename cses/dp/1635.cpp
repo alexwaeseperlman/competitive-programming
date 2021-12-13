@@ -30,3 +30,23 @@ int main() {
 
 
 }
+#include <bits/stdc++.h>
+using namespace std;
+ 
+const int base = 1000000007;
+ 
+int dp[1000001];
+int main() {
+    int n, x; cin >> n >> x;
+    vector<int> c(n);
+    dp[0] = 1;
+    for (int i = 0; i < n; i++) cin >> c[i];
+    for (int i = 0; i <= x; i++) {
+        for (int v : c) {
+            if (i - v >= 0) {
+                dp[i] = (dp[i]+dp[i-v])%base;
+            }
+        }
+    }
+    cout << dp[x] << endl;
+}
