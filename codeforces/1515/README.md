@@ -1,6 +1,7 @@
 # Codeforces contest #1515
 
 ## Problem E
+Problem link: [https://codeforces.com/contest/1515/problem/E](https://codeforces.com/contest/1515/problem/E)
 I attempted this problem while upsolving after one of my first codeforces contests back in May 2021.
 At the time I had no ideas on how to approach it.
 8 months later, a few days ago, I had the idea to attempt this problem again. 
