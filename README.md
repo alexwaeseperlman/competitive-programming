@@ -1,6 +1,8 @@
 # competitive-programming
 A repository for my competitive programming. 
 
+I am no longer uploading my solutions to this respository. I still plan on competing in my free time. My accounts are here: [clists.by](https://clist.by/coder/squishybanana04/)
+
 I have been practicing writing explanations here too. These are links to my most recent write-ups:
 * [Codeforces #1515E (December. 24th, 2021)](<./codeforces/1515>)
 * [Project Euler #263 (Nov. 06, 2021)](<./project euler/263>)
